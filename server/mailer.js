@@ -33,4 +33,6 @@ const options = {
   html: emailHtml,
 };
 
-await transporter.sendMail(options);
+export async function sendEmail() {
+  await transporter.sendMail(options);
+}
