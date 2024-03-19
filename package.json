@@ -1,0 +1,30 @@
+{
+  "name": "react-email",
+  "version": "1.0.0",
+  "description": "building emails in 2024 with 1999 technology is so last century...",
+  "main": "index.js",
+  "scripts": {
+    "dev": "email dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alpe88/react-email.git"
+  },
+  "keywords": [
+    "react-email",
+    "email",
+    "react"
+  ],
+  "author": "Aleksandar Petrovic",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/alpe88/react-email/issues"
+  },
+  "homepage": "https://github.com/alpe88/react-email#readme",
+  "dependencies": {
+    "@react-email/components": "0.0.15",
+    "@react-email/render": "^0.0.12",
+    "nodemailer": "^6.9.12",
+    "react-email": "2.1.0"
+  }
+}
