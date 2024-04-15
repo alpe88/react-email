@@ -4,7 +4,8 @@
   "description": "building emails in 2024 with 1999 technology is so last century...",
   "main": "index.js",
   "scripts": {
-    "dev": "email dev"
+    "dev": "email dev",
+    "send": "node index.js"
   },
   "repository": {
     "type": "git",

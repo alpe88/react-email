@@ -1,38 +1,32 @@
-import { render } from "@react-email/render";
-import nodemailer from "nodemailer";
-import { Email } from "./email";
-import {
+const nodemailer = require("nodemailer");
+const {
   HOST,
   PORT,
   AUTH_USER,
   AUTH_PASSWORD,
   FROM,
   TO,
-  SUBJECT,
-  EMAIL_TEXT,
-} from "./constants";
+} = require("./constants");
 
 const transporter = nodemailer.createTransport({
   host: HOST,
   port: PORT,
-  secure: true,
+  secure: false,
   auth: {
     user: AUTH_USER,
     pass: AUTH_PASSWORD,
   },
 });
 
-const msg = EMAIL_TEXT;
+async function sendEmail({ msg, subject }) {
+  const options = {
+    from: FROM,
+    to: TO,
+    subject,
+    html: msg,
+  };
 
-const emailHtml = render(Email({ msg }));
-
-const options = {
-  from: FROM,
-  to: TO,
-  subject: SUBJECT,
-  html: emailHtml,
-};
-
-export async function sendEmail() {
   await transporter.sendMail(options);
 }
+
+module.exports = { sendEmail };
